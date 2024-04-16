@@ -1,15 +1,19 @@
-public class Cliente {
-    private String nome;
-    private int cpf;
-    private double saldo;
+import java.util.Scanner;
 
-    public Cliente(String n, int c, double s) {
-        nome = n;
-        cpf = c;
-        saldo = s;
+public class Cliente {
+    private double saldo1;
+
+    public Cliente(double saldo) {
+        saldo1 = saldo;
     }
 
-    public void inserirCliente(String nome) {
-
+    Scanner sc = new Scanner(System.in);
+    public void inserirCliente() {
+        System.out.println("Informe seu nome e sobrenome");
+        String nome = sc.nextLine();
+        System.out.println("Informe seu cpf");
+        int cpf = sc.nextInt();
+        System.out.println("Informe seu saldo");
+        double saldo = sc.nextDouble();
     }
 }
