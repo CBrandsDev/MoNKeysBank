@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Cliente {
     double saldo;
     String nome;
-    int cpf;
+    long cpf;
     Saldo total = new Saldo(saldo);
     Scanner sc = new Scanner(System.in);
 
-    public Cliente(String nome, int cpf, double saldo) {
+    public Cliente(String nome, long cpf, double saldo) {
         this.saldo = saldo;
         this.nome = nome;
         this.cpf = cpf;
