@@ -1,19 +1,33 @@
 import java.util.Scanner;
 
 public class Cliente {
-    private double saldo1;
-
-    public Cliente(double saldo) {
-        saldo1 = saldo;
-    }
-
+    double saldo;
+    String nome;
+    int cpf;
+    Saldo total = new Saldo(saldo);
     Scanner sc = new Scanner(System.in);
-    public void inserirCliente() {
-        System.out.println("Informe seu nome e sobrenome");
-        String nome = sc.nextLine();
-        System.out.println("Informe seu cpf");
-        int cpf = sc.nextInt();
-        System.out.println("Informe seu saldo");
-        double saldo = sc.nextDouble();
+
+    public Cliente(String nome, int cpf, double saldo) {
+        this.saldo = saldo;
+        this.nome = nome;
+        this.cpf = cpf;
     }
+
+    public double depositar(double total) {
+        System.out.println("Digite a quantia que deseja depositar: ");
+        double deposito = sc.nextDouble();
+        saldo = deposito + saldo;
+        return saldo;
+    }
+    public double sacar(double total) {
+        System.out.println("Digite a quantia que deseja sacar: ");
+        double saque = sc.nextDouble();
+        if (saque > saldo) {
+            System.out.println("Saldo insuficiente");
+            return 0;
+        }
+        saldo = saldo - saque;
+        return saldo;
+    }
+    
 }

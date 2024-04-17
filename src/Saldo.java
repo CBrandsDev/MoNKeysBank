@@ -1,3 +1,10 @@
 public class Saldo {
-    Cliente cl = new Cliente(0);
+    double saldo;
+
+    public Saldo(double saldo) {
+        this.saldo = saldo;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
 }
