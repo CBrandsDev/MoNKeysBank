@@ -3,14 +3,17 @@ import java.util.Scanner;
 public class Cliente {
     double saldo;
     String nome;
+    String password;
     long cpf;
     Saldo total = new Saldo(saldo);
     Scanner sc = new Scanner(System.in);
 
-    public Cliente(String nome, long cpf, double saldo) {
+    public Cliente(String nome, long cpf, double saldo
+     , String password) {
         this.saldo = saldo;
         this.nome = nome;
         this.cpf = cpf;
+        this.password = password;
     }
 
     public double depositar(double total) {
