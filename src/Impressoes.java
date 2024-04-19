@@ -39,18 +39,22 @@ public class Impressoes {
         System.out.println("                        REGISTER");
         System.out.println("Insira o CPF: ");
         long cpf = sc.nextLong();
+
+
+
+
+
         impressoes.limpar();
         System.out.println("                        REGISTER");
         System.out.println("Insira sua senha: ");
         String password = sc.nextLine();
-        String scPass = "";
         impressoes.limpar();
-        while (!scPass.equals(password)) {
+        while (!password.equals(password)) {
             int index = 0;
             if (index == 0) {
                 System.out.println("                        REGISTER");
                 System.out.println("Insira sua senha: ");
-                scPass = sc.nextLine();
+                password = sc.nextLine();
                 index++;
             } else if(index <= 3) {
                 impressoes.limpar();
@@ -61,6 +65,14 @@ public class Impressoes {
                 impressoes.fechandoApp();
             }    
         }
+
+
+
+
+
+
+
+        
         impressoes.limpar();
         System.out.println("                        REGISTER");
         System.out.println("                                       ");
