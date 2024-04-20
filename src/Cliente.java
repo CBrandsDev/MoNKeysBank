@@ -5,6 +5,7 @@ public class Cliente {
     String nome;
     String password;
     long cpf;
+    Impressoes impressoes = new Impressoes();
     Saldo total = new Saldo(saldo);
     Scanner sc = new Scanner(System.in);
 
@@ -15,18 +16,20 @@ public class Cliente {
         this.cpf = cpf;
         this.password = password;
     }
-
+    
     public double depositar(double total) {
-        System.out.println("Digite a quantia que deseja depositar: ");
+        impressoes.limpar();
+        System.out.println("Enter the amount you wish to deposit: ");
         double deposito = sc.nextDouble();
         saldo = deposito + saldo;
         return saldo;
     }
     public double sacar(double total) {
-        System.out.println("Digite a quantia que deseja sacar: ");
+        impressoes.limpar();
+        System.out.println("Enter the amount you want to withdraw: ");
         double saque = sc.nextDouble();
         if (saque > saldo) {
-            System.out.println("Saldo insuficiente");
+            System.out.println("Insufficient funds");
             return 0;
         }
         saldo = saldo - saque;
