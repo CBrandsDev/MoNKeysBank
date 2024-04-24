@@ -1,10 +1,7 @@
 import java.util.Scanner;
 
-public class Impressoes {
+public class Layout {
     public void mainMenu() {
-        Impressoes impressoes = new Impressoes();
-        Scanner sc = new Scanner(System.in);
-        impressoes.limpar();
         System.out.println("______________________________");
         System.out.println("|  Welcome to MoN Keys Bank  |");
         System.out.println("|                            |");
@@ -15,19 +12,25 @@ public class Impressoes {
         System.out.println("|                            |");
         System.out.println("|        4 - Help            |");
         System.out.println("|____________________________|");
-        int menu = 0;
-        menu = sc.nextInt();
-        if(menu == 2) {
-            menu = 0;
-            impressoes.newSave();
-            impressoes.menu();
-        }
-        else if (menu == 3) {
-            impressoes.fechandoApp();
-            System.exit(0);
-        }
     }
-    public void limpar() {
+
+    public void loginMenu() {
+        System.out.println("______________________________");
+        System.out.println("|MoN Keys Bank                ");
+        System.out.println("|                             ");
+        System.out.println("|Login                        ");
+        System.out.println("|Username:                    ");
+        if(username = null) {
+            System.out.println("|                             ");
+        } else {
+            System.out.println("|"+username+"                             ");
+        }
+        System.out.println("|Password:                    ");
+        System.out.println("|                             ");
+        System.out.println("|                             ");
+        System.out.println("|_____________________________");
+    }
+    public void clean() {
         System.out.println("");
         System.out.println("");
         System.out.println("");
@@ -49,131 +52,131 @@ public class Impressoes {
         System.out.println(""); 
     }
     
-    public void fechandoApp() {
+    public void closeApp() {
         System.out.println("Thank you for using MoN Keys Bank services");
         System.out.println("░░░░░░░░░░░░░░░░░░░░░░█████████░░░░░░░░░\n░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███░░░░░░░\n░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███░░░░\n░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░\n░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███░\n░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██\n░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\n░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██\n░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██\n██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░\n░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░\n░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█░░░░░\n░░████████████░░░█████████████████░░░░░░");
     }
     @SuppressWarnings("resource")
-    public Cliente newSave() {
-        Impressoes impressoes = new Impressoes();
-        impressoes.limpar();
+    public Player newSave() {
+        Layout lyt = new Layout();
+        lyt.clean();
         Scanner sc = new Scanner(System.in);
         System.out.println("                        REGISTER\nType your name: ");
-        String nome = sc.nextLine();
-        impressoes.limpar();
+        String name = sc.nextLine();
+        lyt.clean();
         System.out.println("                        REGISTER");
         System.out.println("Type your CPF: ");
         long cpf = sc.nextLong();
         sc.nextLine();
-        impressoes.limpar();
+        lyt.clean();
         System.out.println("                        REGISTER");
         System.out.println("Type your password: ");
         String password = sc.nextLine();
-        impressoes.limpar();
+        lyt.clean();
         String scPass = "";
         int index = 0;
         while (!password.equals(scPass)) {
             index++;
             if(index == 1) {
-                impressoes.limpar();
+                lyt.clean();
                 System.out.println("                        REGISTER");
                 System.out.println("Type your password again: ");
                 scPass = sc.nextLine();
                 index++;
             }
             else if(index <= 7) {
-                impressoes.limpar();
+                lyt.clean();
                 System.out.println("                        REGISTER");
                 System.out.println("Incorrect password, type again: ");
                 scPass = sc.nextLine();
                 index++;
             } else if(index > 7) {
-                impressoes.fechandoApp();
+                lyt.closeApp();
                 System.exit(0);
             }    
         }
-        impressoes.limpar();
+        lyt.clean();
         System.out.println("                        REGISTER");
         System.out.println("                                       ");
         System.out.println("Min: M$ 1000, Max: M$ 5000 (VIP: M$ = $$$)                                      ");
         System.out.println("Enter the amount you wish to deposit: ");
-        double saldo = sc.nextDouble();
+        double balance = sc.nextDouble();
         boolean notVip = true;
         while(notVip = true){
-            if(saldo > 5000) {
-                impressoes.limpar();
+            if(balance > 5000) {
+                lyt.clean();
                 System.out.println("                        REGISTER");
                 System.out.println("");
                 System.out.println("Only VIP's can deposit more than M$ 5000 ");
                 System.out.println("Enter the amount you wish to deposit:   ");
-                saldo = sc.nextDouble();
-            } else if (saldo < 999) {
-                impressoes.limpar();
+                balance = sc.nextDouble();
+            } else if (balance < 999) {
+                lyt.clean();
                 System.out.println("                        REGISTER");
                 System.out.println("");
                 System.out.println("Only VIP's can deposit less than M$ 1000");
                 System.out.println("Enter the amount you wish to deposit:   ");
-                saldo = sc.nextDouble();
+                balance = sc.nextDouble();
                 
             } else {
                 break;
             }
         }
         
-        Cliente cliente = new Cliente(nome, cpf, saldo ,password);
-        return cliente;
+        Player player = new Player(name, cpf, balance ,password);
+        return player;
     }
     
 
     @SuppressWarnings("resource")
     public void menu() {
         Scanner sc = new Scanner(System.in);
-        Impressoes impressoes = new Impressoes();
-        impressoes.limpar();
-        Cliente cliente = impressoes.newSave();
-        Saldo saldo = new Saldo(cliente.saldo);
-        cliente.saldo = saldo.getSaldo();
-        impressoes.limpar();
+        Layout lyt = new Layout();
+        lyt.clean();
+        Player player = lyt.newSave();
+        Life balance = new Life(player.balance);
+        player.balance = balance.getSaldo();
+        lyt.clean();
         boolean index = true;
         int turn = 1;
         while(index == true) {
-            impressoes.limpar();
+            lyt.clean();
             System.out.println("                   MON KEYS BANK");
-            System.out.println("                   Welcome " + cliente.nome);
-            System.out.println("CPF: " + cliente.cpf);
-            System.out.println("Balance: M$ " + cliente.saldo + "\n");
+            System.out.println("                   Welcome " + player.name);
+            System.out.println("CPF: " + player.cpf);
+            System.out.println("Balance: M$ " + player.balance + "\n");
             System.out.println("                        What do you want to do?\n                                   Withdraw - 1\n                                    Deposit - 2\n                                       Exit - 3");
             int menu = sc.nextInt();
             turn++;
             if(menu == 1) {
-                cliente.sacar(cliente.saldo);
-                impressoes.limpar();
-                System.out.println("Balance: " + cliente.saldo);
+                player.sacar(player.balance);
+                lyt.clean();
+                System.out.println("Balance: " + player.balance);
                 
                 System.out.println("Do you want to return to the menu? [1 - Yes | 2 - No]");
                 int verificador = sc.nextInt();
                 if(verificador == 2) {
-                    impressoes.limpar();
-                    impressoes.fechandoApp();
+                    lyt.clean();
+                    lyt.closeApp();
                     index = false;
                 }
                 
             } else if (menu == 2) {
-                cliente.depositar(cliente.saldo);
-                impressoes.limpar();
-                System.out.println("Balance: " + cliente.saldo);
+                player.depositar(player.balance);
+                lyt.clean();
+                System.out.println("Balance: " + player.balance);
                 System.out.println("Do you want to return to the menu? [1 - Yes | 2 - No]");
                 int verificador = sc.nextInt();
                 if(verificador == 2) {
-                    impressoes.limpar();
-                    impressoes.fechandoApp();
+                    lyt.clean();
+                    lyt.closeApp();
                     index = false;
                 }
             } else if(menu == 3) {
-                impressoes.limpar();
-                impressoes.mainMenu();
+                lyt.clean();
+                lyt.mainMenu();
             } else if (menu <= 0 && menu >= 4) {
-                impressoes.limpar();
+                lyt.clean();
             }
 
         }
