@@ -5,7 +5,7 @@ public class Player {
     String name;
     String password;
     long cpf;
-    Layout lyt = new Layout();
+    Layout lyt = new Layout(name, cpf, balance, password);
     Life total = new Life(balance);
     Scanner sc = new Scanner(System.in);
 

@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
-public class Layout {
+public class Layout extends Player {
+
+    public Layout(String name, long cpf, double balance, String password) {
+        super(name, cpf, balance, password);
+    }
+
     public void mainMenu() {
         System.out.println("______________________________");
         System.out.println("|  Welcome to MoN Keys Bank  |");
@@ -16,19 +21,18 @@ public class Layout {
 
     public void loginMenu() {
         System.out.println("______________________________");
-        System.out.println("|MoN Keys Bank                ");
+        System.out.println("|MoN Keys Bank Login          ");
         System.out.println("|                             ");
         System.out.println("|Login                        ");
         System.out.println("|Username:                    ");
-        if(username = null) {
+        if(name == null) {
             System.out.println("|                             ");
         } else {
-            System.out.println("|"+username+"                             ");
+            System.out.println("|"+name+"                             ");
         }
         System.out.println("|Password:                    ");
         System.out.println("|                             ");
         System.out.println("|                             ");
-        System.out.println("|_____________________________");
     }
     public void clean() {
         System.out.println("");
@@ -56,85 +60,27 @@ public class Layout {
         System.out.println("Thank you for using MoN Keys Bank services");
         System.out.println("░░░░░░░░░░░░░░░░░░░░░░█████████░░░░░░░░░\n░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███░░░░░░░\n░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███░░░░\n░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░\n░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███░\n░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██\n░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\n░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██\n░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██\n██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░\n░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░\n░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█░░░░░\n░░████████████░░░█████████████████░░░░░░");
     }
-    @SuppressWarnings("resource")
-    public Player newSave() {
-        Layout lyt = new Layout();
-        lyt.clean();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("                        REGISTER\nType your name: ");
-        String name = sc.nextLine();
-        lyt.clean();
-        System.out.println("                        REGISTER");
-        System.out.println("Type your CPF: ");
-        long cpf = sc.nextLong();
-        sc.nextLine();
-        lyt.clean();
-        System.out.println("                        REGISTER");
-        System.out.println("Type your password: ");
-        String password = sc.nextLine();
-        lyt.clean();
-        String scPass = "";
-        int index = 0;
-        while (!password.equals(scPass)) {
-            index++;
-            if(index == 1) {
-                lyt.clean();
-                System.out.println("                        REGISTER");
-                System.out.println("Type your password again: ");
-                scPass = sc.nextLine();
-                index++;
-            }
-            else if(index <= 7) {
-                lyt.clean();
-                System.out.println("                        REGISTER");
-                System.out.println("Incorrect password, type again: ");
-                scPass = sc.nextLine();
-                index++;
-            } else if(index > 7) {
-                lyt.closeApp();
-                System.exit(0);
-            }    
-        }
-        lyt.clean();
-        System.out.println("                        REGISTER");
-        System.out.println("                                       ");
-        System.out.println("Min: M$ 1000, Max: M$ 5000 (VIP: M$ = $$$)                                      ");
-        System.out.println("Enter the amount you wish to deposit: ");
-        double balance = sc.nextDouble();
-        boolean notVip = true;
-        while(notVip = true){
-            if(balance > 5000) {
-                lyt.clean();
-                System.out.println("                        REGISTER");
-                System.out.println("");
-                System.out.println("Only VIP's can deposit more than M$ 5000 ");
-                System.out.println("Enter the amount you wish to deposit:   ");
-                balance = sc.nextDouble();
-            } else if (balance < 999) {
-                lyt.clean();
-                System.out.println("                        REGISTER");
-                System.out.println("");
-                System.out.println("Only VIP's can deposit less than M$ 1000");
-                System.out.println("Enter the amount you wish to deposit:   ");
-                balance = sc.nextDouble();
-                
-            } else {
-                break;
-            }
-        }
-        
-        Player player = new Player(name, cpf, balance ,password);
-        return player;
+    
+    public void newSave() {
+        System.out.println("______________________________");
+        System.out.println("|MoN Keys Bank Register       ");
+        System.out.println("|                             ");
+        System.out.println("|Username:                    ");
+        System.out.println("|                             ");
+        System.out.println("|CPF:                         ");
+        System.out.println("|                             ");
+        System.out.println("|Password:                    ");
+        System.out.println("|                             ");
     }
     
 
     @SuppressWarnings("resource")
     public void menu() {
         Scanner sc = new Scanner(System.in);
-        Layout lyt = new Layout();
+        Layout lyt = new Layout(name, cpf, balance, password);
         lyt.clean();
-        Player player = lyt.newSave();
-        Life balance = new Life(player.balance);
+        Player player = lyt;
+        Life balance = new Life(lyt.balance);
         player.balance = balance.getSaldo();
         lyt.clean();
         boolean index = true;
