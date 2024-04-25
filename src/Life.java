@@ -4,6 +4,9 @@ public class Life {
     public Life(double balance) {
         this.balance = balance;
     }
+    public Life() {
+        
+    }
     public double getSaldo() {
         return balance;
     }

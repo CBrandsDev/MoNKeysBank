@@ -16,6 +16,9 @@ public class Player {
         this.cpf = cpf;
         this.password = password;
     }
+    public Player() {
+
+    }
     
     public String getPlayerName() {
         return name;
