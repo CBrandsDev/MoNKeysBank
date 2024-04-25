@@ -66,11 +66,23 @@ public class Layout extends Player {
         System.out.println("|MoN Keys Bank Register       ");
         System.out.println("|                             ");
         System.out.println("|Username:                    ");
-        System.out.println("|                             ");
+        if(name == null) {
+            System.out.println("|                             ");
+        } else {
+            System.out.println("|"+name+"                             ");
+        }
         System.out.println("|CPF:                         ");
-        System.out.println("|                             ");
+        if(cpf == 0) {
+            System.out.println("|                             ");
+        } else {
+            System.out.println("|"+cpf+"                             ");
+        }
         System.out.println("|Password:                    ");
-        System.out.println("|                             ");
+        if(password == null) {
+            System.out.println("|                             "); 
+        } else {
+            System.out.println("|****                         ");
+        }
     }
     
 
