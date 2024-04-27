@@ -13,6 +13,7 @@ public class App{
         balance = life.getSaldo();
         Game game = new Game(name, cpf, balance, password);
         game.init();
+        // ta dificil viu
     }
 
     
