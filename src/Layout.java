@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 public class Layout extends Player {
 
-    public Layout(String name, long cpf, double balance, String password) {
+    public Layout(String name, String password, double balance, long cpf) {
         super(name, cpf, balance, password);
     }
-
     public void mainMenu() {
         System.out.println("______________________________");
         System.out.println("|  Welcome to MoN Keys Bank  |");
@@ -28,7 +27,7 @@ public class Layout extends Player {
         if(name == null) {
             System.out.println("|                             ");
         } else {
-            System.out.println("|"+name+"                             ");
+            System.out.println("|"+super.name+"                             ");
         }
         System.out.println("|Password:                    ");
         System.out.println("|                             ");
@@ -66,19 +65,19 @@ public class Layout extends Player {
         System.out.println("|MoN Keys Bank Register       ");
         System.out.println("|                             ");
         System.out.println("|Username:                    ");
-        if(name == null) {
+        if(super.name == null) {
             System.out.println("|                             ");
         } else {
-            System.out.println("|"+name+"                             ");
+            System.out.println("|"+super.name+"                             ");
         }
         System.out.println("|CPF:                         ");
         if(cpf == 0) {
             System.out.println("|                             ");
         } else {
-            System.out.println("|"+cpf+"                             ");
+            System.out.println("|"+super.cpf+"                             ");
         }
         System.out.println("|Password:                    ");
-        if(password == null) {
+        if(super.password == null) {
             System.out.println("|                             "); 
         } else {
             System.out.println("|****                         ");
@@ -89,7 +88,7 @@ public class Layout extends Player {
     @SuppressWarnings("resource")
     public void menu() {
         Scanner sc = new Scanner(System.in);
-        Layout lyt = new Layout(name, cpf, balance, password);
+        Layout lyt = new Layout(super.name, super.password, super.balance, super.cpf);
         lyt.clean();
         Player player = lyt;
         Life balance = new Life(lyt.balance);

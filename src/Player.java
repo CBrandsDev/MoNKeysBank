@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Player {
-    double balance;
-    String name;
-    String password;
-    long cpf;
-    Layout lyt = new Layout(name, cpf, balance, password);
+public abstract class Player {
+    protected double balance;
+    protected String name;
+    protected String password;
+    protected long cpf;
+    Layout lyt = new Layout(name, password, balance, cpf);
     Life total = new Life(balance);
     Scanner sc = new Scanner(System.in);
 

@@ -1,32 +1,32 @@
 import java.util.Scanner;
 public class Game extends Player {
     
-    public Game(String name, long cpf, double balance, String password) {
+    public Game(String name, String password, double balance, long cpf) {
         super(name, cpf, balance, password);
     }
 
     public void init() {
-        Layout lyt = new Layout(name, cpf, balance, password);
+        Layout lyt = new Layout(super.name, super.password, super.balance, super.cpf);
         Scanner sc = new Scanner(System.in);
         lyt.clean();
         lyt.newSave();
         System.out.println("");
         System.out.println("Type your Name: ");
-        String name = sc.nextLine();
+        super.name = sc.nextLine();
         lyt.clean();
         lyt.newSave();
         System.out.println("");
         System.out.println("Type your CPF: ");
-        long cpf = sc.nextLong();
+        super.cpf = sc.nextLong();
         lyt.clean();
         lyt.newSave();
         System.out.println("");
         System.out.println("Type your password: ");
-        String password = sc.nextLine();
+        super.password = sc.nextLine();
         lyt.clean();
         String scPass = "";
         int index = 0;
-        while (!password.equals(scPass)) {
+        while (!super.password.equals(scPass)) {
             index++;
             if(index == 1) {
                 lyt.clean();
@@ -53,7 +53,7 @@ public class Game extends Player {
         System.out.println("");
         System.out.println("Min: M$ 1000, Max: M$ 5000 (VIP: M$ = $$$)                                      ");
         System.out.println("Enter the amount you wish to deposit: ");
-        double balance = sc.nextDouble();
+        super.balance = sc.nextDouble();
         boolean notVip = true;
         while(notVip = true){
             if(balance > 5000) {
@@ -62,7 +62,7 @@ public class Game extends Player {
                 System.out.println("");
                 System.out.println("Only VIP's can deposit more than M$ 5000 ");
                 System.out.println("Enter the amount you wish to deposit:   ");
-                balance = sc.nextDouble();
+                super.balance = sc.nextDouble();
             } else if (balance < 999) {
                 lyt.clean();
             
@@ -75,7 +75,6 @@ public class Game extends Player {
                 break;
             }
         }
-        Player player = new Player(name, cpf, balance ,password);
         
         lyt.mainMenu();
     }
