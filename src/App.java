@@ -14,6 +14,7 @@ public class App{
         Game game = new Game(name, password, balance, cpf);
         game.init();
         //nem lembro qual era o caso aqui
+        //nem lembro qual era o caso aqui²
     }
 
     
