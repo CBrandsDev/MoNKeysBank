@@ -15,6 +15,7 @@ public class App{
         game.init();
         //nem lembro qual era o caso aqui
         //nem lembro qual era o caso aqui²
+        //nem lembro qual era o caso aqui³
     }
 
     
